@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="keepmygreen">
+    <ion-title>
+			<ion-icon name="pin"></ion-icon> Incident report
+		</ion-title>
+  </ion-navbar>
+</ion-header>
+
+ <ion-content>
+	<div #map id="map"></div>
+	
+	<br />
+	<br />
+	
+	<ion-list no-lines>
+		<ion-list-header>
+			<p ion-text color="keepmygreen">Provide some information</p>
+		</ion-list-header>
+		
+		<ion-item>
+			<ion-label stacked>Message</ion-label>
+			<ion-textarea #textarea autofocus></ion-textarea>
+		</ion-item>
+	</ion-list>
+		
+	<br />
+	<br />
+	
+	<ion-list no-lines>
+		<ion-list-header>
+			<p ion-text color="keepmygreen">Picture</p>
+		</ion-list-header>
+		
+		<ion-item text-wrap>
+			If possible also take a picture of the incident and upload it.
+		</ion-item>
+	</ion-list>
+	
+	<img [src]="cameraProvider.image" *ngIf="cameraProvider.image" />
+
+	<div text-center>
+		<button ion-button outline color="keepmygreen" (click)="takePicture()" icon-only>
+			<ion-icon name="camera"></ion-icon>
+		</button>
+	</div>
+	
+	<br />
+	
+	<div text-center>
+		<button ion-button outline color="keepmygreen" (click)="reportIncident()" icon-left>
+			<ion-icon name="paper-plane"></ion-icon> Send us
+		</button>
+	</div>
+</ion-content>
